@@ -37,9 +37,6 @@ void loop() {
   vazao1 = contaPulso1 / 10.7;                     // equação para conversão da contagem de pulsos em fluxo (L/min) para rot. 1
                                                   // espera-se que os fluxos não passem de 500 L/min
   Serial.println(vazao1);                         // envia fluxo 1 para receptor MEGA
-  Serial.println(buf);                         // envia fluxo 1 para receptor MEGA
-
-
 
   digitalWrite(SLAVE, LOW);
   SPI.transfer(buf);
