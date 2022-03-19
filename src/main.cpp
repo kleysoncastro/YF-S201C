@@ -1,12 +1,16 @@
+/* 
+  main file conication slave spi
+
+ */
+
 #include <Arduino.h>
 #include <SPI.h>
 #define PIN3_INT_1 3
 #define SLAVE 10
 
 void incpulso1();
-
-
-float vazao1;                                              // declara variáveis para leitura das vazões
+char buf = 15;
+unsigned char  vazao1;                                              // declara variáveis para leitura das vazões
 int contaPulso1;                                           // declara as funções para contagem dos pulsos de cada rotâmetro
 
 void setup() {
@@ -35,7 +39,7 @@ void loop() {
   Serial.println(vazao1);                         // envia fluxo 1 para receptor MEGA
 
   digitalWrite(SLAVE, LOW);
-  SPI.transfer(vazao1);
+  SPI.transfer(buf);
   delay(100);
 
 }
